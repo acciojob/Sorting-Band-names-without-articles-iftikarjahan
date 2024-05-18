@@ -8,7 +8,7 @@ function removeaAnThe(str){
 }
 
 let inputArr=[];
-let noOfItems=prompt("Enter number of items: ");
+// let noOfItems=prompt("Enter number of items: ");
 for(let i=0;i<noOfItems;i++){
 	inputArr.push(prompt(`Enter the ${i}th item: `));
 }
@@ -28,4 +28,12 @@ let filteredArray=inputArr.map(sent=>{
 return filteredArray.sort();
 }
 
-sortArr(inputArr);
+let sortedArray=sortArr(inputArr);
+let list=document.querySelector("ul");
+list.innerHTML=`
+	${sortedArray.map((ele)=>{
+		return `<li>${ele}</li>`
+	})}
+`
+
+
